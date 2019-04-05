@@ -9,8 +9,8 @@ chgrp -R 0 /var/log/xrdp-sesman.log
 chmod -R g=u /var/log/xrdp-sesman.log
 
 touch /var/log/xrdp.log
-chgrp -R 0 /var/log/xrdp-sesman.log
-chmod -R g=u /var/log/xrdp-sesman.log
+chgrp -R 0 /var/log/xrdp.log
+chmod -R g=u /var/log/xrdp.log
 
 
 chgrp -R 0 /etc/xrdp

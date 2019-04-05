@@ -16,12 +16,16 @@ case $DESKTOP in
             cp /tmp/config/dconf/00_mate_theme /etc/dconf/db/local.d/
             dconf update
           ;;
-     xfce|*)
+     xfce)
             echo "Installing XFCE Destop"
             yum -y groupinstall "X Window system"
             yum -y groupinstall --setopt=group_package_types=mandatory xfce
             echo "PREFERRED=/usr/bin/startxfce4" > /etc/sysconfig/desktop
-
+          ;;
+     lxqt|*)
+            echo "Installing LXQT Destop"
+            yum -y install lxqt-about lxqt-common lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session network-manager-applet nm-connection-editor pcmanfm-qt qterminal-qt5
+            echo "PREFERRED=/usr/bin/startlxqt" > /etc/sysconfig/desktop
           ;;
 esac
 
